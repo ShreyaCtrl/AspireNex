@@ -12,21 +12,25 @@ import Skills from "./components/Skills";
 import Projects from "./components/Projects";
 import Education from "./components/Education";
 import Blogs from "./components/Certifications";
+import ContactSection from "./components/ContactSection";
 
 function App() {
   return (
-    <div className="App min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
-      <ToastContainer />
-      <Navbar />
-      <HeroSection />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <Education />
-      <Blogs />
-      <ScrollToTop />
-    </div>
+    <>
+      <div className="App min-h-screen relative mx-auto px-6 sm:px-12 lg:max-w-[70rem] xl:max-w-[76rem] 2xl:max-w-[92rem] text-white">
+        <Navbar />
+        <HeroSection />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <Education />
+        <Blogs />
+        <ContactSection />
+        <Footer />
+        <ScrollToTop />
+      </div>
+    </>
   );
 }
 

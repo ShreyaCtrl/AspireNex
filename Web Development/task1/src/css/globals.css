@@ -1,27 +1,36 @@
 :root {
-	 --foreground-rgb: #d3d8e8;
+  --foreground-rgb: #d3d8e8;
 }
- @media (prefers-color-scheme: dark) {
-	 :root {
-		 --foreground-rgb: 255, 255, 255;
-	}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+  }
 }
- body {
-	 color: #000;
-	 background-color: #0d1224;
+body {
+  color: #000;
+  background-color: #0d1224;
 }
- #sticky-card-1 {
-	 --index: 1;
+#sticky-card-1 {
+  --index: 1;
 }
- #sticky-card-2 {
-	 --index: 2;
+#sticky-card-2 {
+  --index: 2;
 }
- #sticky-card-3 {
-	 --index: 3;
+#sticky-card-3 {
+  --index: 3;
 }
- #sticky-card-4 {
-	 --index: 4;
+#sticky-card-4 {
+  --index: 4;
 }
- .sticky-card {
-	 top: calc(var(--index) * 4rem);
+#sticky-card-5 {
+  --index: 5;
+}
+#sticky-card-6 {
+  --index: 6;
+}
+#sticky-card-7 {
+  --index: 7;
+}
+.sticky-card {
+  top: calc(var(--index) * 4rem);
 }

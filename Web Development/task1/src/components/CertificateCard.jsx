@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-// import { blogsData } from "../data/blogsData";
 
 const CertificateCard = ({ blog }) => {
   const { cover_image, company, url, title, description } = blog;
@@ -10,26 +9,12 @@ const CertificateCard = ({ blog }) => {
           src={cover_image}
           height={1080}
           width={1920}
-          alt=""
+          alt={`${company}`}
           className="h-full w-full group-hover:scale-110 transition-all duration-300"
         />
       </div>
       <div className="p-2 sm:p-3 flex flex-col">
-        {/* <div className="flex justify-between items-center text-[#16f2b3] text-sm">
-          <p>{timeConverter(blog.published_at)}</p>
-          <div className="flex items-center gap-3">
-            <p className="flex items-center gap-1">
-              <BsHeartFill />
-              <span>{blog.public_reactions_count}</span>
-            </p>
-            {blog.comments_count > 0 && (
-              <p className="flex items-center gap-1">
-                <FaCommentAlt />
-                <span>{blog.comments_count}</span>
-              </p>
-            )}
-          </div>
-        </div> */}
+        
         <Link target="_blank" to={url}>
           <p className="my-2 lg:my-3 cursor-pointer text-lg text-white sm:text-xl font-medium hover:text-violet-500">
             {title}
@@ -39,13 +24,7 @@ const CertificateCard = ({ blog }) => {
         <p className="text-sm lg:text-base text-[#d3d8e8] pb-3 lg:pb-6 line-clamp-3">
           {description}
         </p>
-        {/* <div className="">
-          <Link target='_blank' href={blog.url}>
-            <button className='bg-violet-500 text-white px-3 py-1.5 rounded-full text-xs'>
-              Read More
-            </button>
-          </Link>
-        </div> */}
+        
       </div>
     </div>
   );

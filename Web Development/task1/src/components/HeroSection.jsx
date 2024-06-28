@@ -2,6 +2,7 @@
 
 import { personalData } from "../data/personalData";
 // import Image from "";
+import { SiLinktree } from "react-icons/si";
 import heroImage from "../assets/hero.svg";
 import { Link } from "react-router-dom";
 import { BsGithub, BsLinkedin } from "react-icons/bs";
@@ -44,13 +45,13 @@ function HeroSection() {
             >
               <BsLinkedin size={30} />
             </Link>
-            {/* <Link
-              to={personalData.facebook}
+            <Link
+              to={personalData.linkTree}
               target="_blank"
               className="transition-all text-pink-500 hover:scale-125 duration-300"
             >
-              <FaFacebook size={30} />
-            </Link> */}
+              <SiLinktree size={30} />
+            </Link>
             <Link
               to={personalData.leetcode}
               target="_blank"
@@ -58,13 +59,6 @@ function HeroSection() {
             >
               <SiLeetcode size={30} />
             </Link>
-            {/* <Link
-              to={personalData.twitter}
-              target="_blank"
-              className="transition-all text-pink-500 hover:scale-125 duration-300"
-            >
-              <FaTwitterSquare size={30} />
-            </Link> */}
           </div>
 
           <div className="flex items-center gap-3">
@@ -118,23 +112,23 @@ function HeroSection() {
               <div className="ml-4 lg:ml-8 mr-2">
                 <span className=" text-white">skills:</span>
                 <span className="text-gray-400">{`['`}</span>
-                <span className="text-amber-300">React</span>
+                <span className="text-amber-300">ReactJs</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NextJS</span>
+                <span className="text-amber-300">NodeJs</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Redux</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Express</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">NestJS</span>
-                <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">MySql</span>
+                <span className="text-amber-300">ExpressJs</span>
                 <span className="text-gray-400">{"', '"}</span>
                 <span className="text-amber-300">MongoDB</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">Docker</span>
+                <span className="text-amber-300">Flask</span>
                 <span className="text-gray-400">{"', '"}</span>
-                <span className="text-amber-300">AWS</span>
+                <span className="text-amber-300">MySql</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Java</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">Python</span>
+                <span className="text-gray-400">{"', '"}</span>
+                <span className="text-amber-300">C</span>
                 <span className="text-gray-400">{"'],"}</span>
               </div>
               <div>
@@ -146,7 +140,7 @@ function HeroSection() {
               </div>
               <div>
                 <span className="ml-4 lg:ml-8 mr-2 text-white">
-                  quickLearner:
+                  passionate:
                 </span>
                 <span className="text-orange-400">true</span>
                 <span className="text-gray-400">,</span>
@@ -162,8 +156,8 @@ function HeroSection() {
                 <span className="ml-4 lg:ml-8 mr-2 text-green-400">
                   hireable:
                 </span>
-                <span className="text-orange-400">function</span>
-                <span className="text-gray-400">{"() {"}</span>
+                <span className="text-orange-400">{`const function `}</span>
+                <span className="text-gray-400">{"= () => {"}</span>
               </div>
               <div>
                 <span className="ml-8 lg:ml-16 mr-2 text-orange-400">
