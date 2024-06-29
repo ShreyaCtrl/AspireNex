@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 
 const Navbar = () => {
   return (
@@ -16,69 +17,75 @@ const Navbar = () => {
           id="navbar-default"
         >
           <li>
-            <Link
+            <HashLink
               className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
               to="/#about"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
                 ABOUT
               </div>
-            </Link>
+            </HashLink>
           </li>
 
           <li>
-            <Link
+            <HashLink
               className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
               to="/#experience"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
                 EXPERIENCE
               </div>
-            </Link>
+            </HashLink>
           </li>
 
           <li>
-            <Link
+            <HashLink
               className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
               to="/#skills"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
                 SKILLS
               </div>
-            </Link>
+            </HashLink>
           </li>
 
           <li>
-            <Link
+            <HashLink
               className="block px-4 py-2 no-underline outline-none hover:no-underline"
-              to="/#education"
-            >
-              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
-                EDUCATION
-              </div>
-            </Link>
-          </li>
-
-          <li>
-            <Link
-              className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
               to="/#projects"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
                 PROJECTS
               </div>
-            </Link>
+            </HashLink>
           </li>
 
           <li>
-            <Link
+            <HashLink
               className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
+              to="/#education"
+            >
+              <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
+                EDUCATION
+              </div>
+            </HashLink>
+          </li>
+
+          <li>
+            <HashLink
+              className="block px-4 py-2 no-underline outline-none hover:no-underline"
+              smooth
               to="/#certifications"
             >
               <div className="text-sm text-white transition-colors duration-300 hover:text-pink-600">
                 CERTIFICATIONS
               </div>
-            </Link>
+            </HashLink>
           </li>
         </ul>
       </div>
