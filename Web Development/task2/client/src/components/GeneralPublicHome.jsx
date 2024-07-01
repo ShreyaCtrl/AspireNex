@@ -1,7 +1,7 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
 
-const EmployeeHome = () => {
+const FounderHome = () => {
   return (
     <Container maxWidth="lg">
       <Box
@@ -23,4 +23,4 @@ const EmployeeHome = () => {
   );
 };
 
-export default EmployeeHome;
+export default FounderHome;

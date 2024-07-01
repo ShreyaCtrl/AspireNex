@@ -99,18 +99,23 @@ import {
   TextField,
   Typography,
   Alert,
+  MenuItem,
 } from "@mui/material";
 import { useNavigate, Link } from "react-router-dom";
 import { UserContext } from "../UserContext.jsx"; // Adjust the import path
+// import { UserContext } from "../UserContext";
 import useGetUser from "../hooks/useGetUser.js"; // Adjust the import path
 
 const Login = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
   const [error, setError] = useState(null);
   const { setUser } = useContext(UserContext);
   const { fetchUser, isFetchingUser } = useGetUser(setUser);
   const navigate = useNavigate();
+
+  const roles = ["Investor", "Founder", "General Public"];
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -119,8 +124,8 @@ const Login = () => {
       const fetchedUser = await fetchUser(username, password);
       console.log("Fetched user: ", fetchedUser);
       if (fetchedUser) {
-        setUser(fetchedUser); // Set the user context with fetched user data
-        navigate("/home");
+        // setUser(fetchedUser); // Set the user context with fetched user data
+        navigate("/profile");
       } else {
         setError("Invalid username or password.");
       }
@@ -173,6 +178,22 @@ const Login = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            select
+            label="Role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            {roles.map((role) => (
+              <MenuItem key={role} value={role}>
+                {role}
+              </MenuItem>
+            ))}
+          </TextField>
           <Button
             type="submit"
             fullWidth

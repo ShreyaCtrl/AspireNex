@@ -1,16 +1,36 @@
 import React, { useState } from "react";
-import { Box, Button, Container, TextField, Typography } from "@mui/material";
-import { Link } from "react-router-dom";
+import {
+  Box,
+  Button,
+  Container,
+  TextField,
+  Typography,
+  Alert,
+  MenuItem,
+} from "@mui/material";
+import { Link, useNavigate } from "react-router-dom";
 import useAddUser from "../hooks/useAddUser"; // Adjust the import path
 
 const Signup = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [role, setRole] = useState("");
+  const [error, setError] = useState(null);
   const { addUser, isAddingUser } = useAddUser();
+  const navigate = useNavigate();
+
+  const roles = ["Investor", "Founder", "General Public"];
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUser({ username, password, role: "customer" }); // Fixed role to 'customer'
+    setError(null); // Reset any previous errors
+    try {
+      addUser({ username, password, role });
+      navigate("/");
+
+    } catch (err) {
+      setError("An error occurred. Please try again.");
+    }
   };
 
   return (
@@ -55,6 +75,22 @@ const Signup = () => {
             value={password}
             onChange={(e) => setPassword(e.target.value)}
           />
+          <TextField
+            variant="outlined"
+            margin="normal"
+            required
+            fullWidth
+            select
+            label="Role"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            {roles.map((role) => (
+              <MenuItem key={role} value={role}>
+                {role}
+              </MenuItem>
+            ))}
+          </TextField>
           <Button
             type="submit"
             fullWidth

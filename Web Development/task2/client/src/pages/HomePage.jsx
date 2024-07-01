@@ -1,8 +1,9 @@
 import React, { useContext, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { UserContext } from "../UserContext.jsx";
-import CustomerHome from "../components/CustomerHome.jsx";
-import EmployeeHome from "../components/EmployeeHome.jsx";
+import InvestorHome  from "../components/InvestorHome.jsx";
+import  FounderHome  from "../components/FounderHome.jsx";
+import  GeneralPublicHome  from "../components/GeneralPublicHome.jsx";
 
 const Home = () => {
   const { user } = useContext(UserContext);
@@ -18,8 +19,9 @@ const Home = () => {
 
   return (
     <>
-      {user.role === "customer" && <CustomerHome />}
-      {user.role === "employee" && <EmployeeHome />}
+      {user.role === "Investor" && <InvestorHome />}
+      {user.role === "Founder" && <FounderHome />}
+      {user.role === "General Public" && <GeneralPublicHome />}
     </>
   );
 };

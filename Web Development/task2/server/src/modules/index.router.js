@@ -1,6 +1,7 @@
 import connectDb from "../../DB/connection.js";
-// import customerRouter from "./customer/customer.router.js";
 import userRouter from "./users/user.router.js";
+import investorProfileRouter from "./investorProfile/investorProfile.router.js";
+import founderProfileRouter from "./founderProfile/founderProfile.router.js";
 import cors from "cors";
 
 const initApp = async (app, express) => {
@@ -11,9 +12,10 @@ const initApp = async (app, express) => {
   connectDb();
   app.use(cors(corsOptions));
   app.use(express.json());
-//   app.use("/todos", todoRouter);
+
   app.use("/users", userRouter);
-  // app.use("/customer", customerRouter);
+  app.use("/founderProfile", founderProfileRouter);
+  app.use("/investorProfile", investorProfileRouter);
 };
 
 export default initApp;
