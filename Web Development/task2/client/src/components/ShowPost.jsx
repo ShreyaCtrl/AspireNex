@@ -220,11 +220,9 @@ import {
   IconButton,
 } from "@mui/material";
 import ThumbUpIcon from "@mui/icons-material/ThumbUp";
-import { Link } from "react-router-dom";
 import useAddComment from "../hooks/useAddComment";
 import useUpvotePost from "../hooks/useUpvotePost";
 import ThumbUpOffAltIcon from "@mui/icons-material/ThumbUpOffAlt";
-import useGetPosts from "../hooks/useGetPosts";
 import {jwtDecode} from "jwt-decode";
 
 const ShowPost = ({ post }) => {

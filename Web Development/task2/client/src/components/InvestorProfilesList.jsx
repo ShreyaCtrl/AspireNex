@@ -2,8 +2,6 @@ import React from "react";
 import {
   CircularProgress,
   List,
-  ListItem,
-  ListItemText,
   Typography,
   Divider,
   Card,

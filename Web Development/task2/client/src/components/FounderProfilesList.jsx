@@ -1,5 +1,5 @@
 import React from "react";
-import { CircularProgress, List, ListItem, Typography, Card, CardContent, Divider } from "@mui/material";
+import { CircularProgress, List, Typography, Card, CardContent, Divider } from "@mui/material";
 import useGetFounderProfiles from "../hooks/useGetAllFounders";
 
 const FounderProfilesList = () => {
