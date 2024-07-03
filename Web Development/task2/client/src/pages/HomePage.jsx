@@ -5,7 +5,7 @@ import InvestorHome  from "../components/InvestorHome.jsx";
 import  FounderHome  from "../components/FounderHome.jsx";
 import  GeneralPublicHome  from "../components/GeneralPublicHome.jsx";
 
-const Home = () => {
+const HomePage = () => {
   const { user } = useContext(UserContext);
   const navigate = useNavigate();
 
@@ -26,4 +26,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default HomePage;

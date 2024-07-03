@@ -3,6 +3,7 @@ import { Container, Grid } from "@mui/material";
 import InvestorProfileCard from "../components/InvestorProfileCard";
 import FounderProfileCard from "../components/FounderProfileCard";
 import { UserContext } from "../UserContext";
+import PostsPage from "./PostsPage";
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);
@@ -15,9 +16,11 @@ const ProfilePage = () => {
     <Container>
       <Grid container spacing={3} justifyContent="center">
         {user.role === "Investor" && (
+          <>
           <Grid item xs={12} md={6}>
             <InvestorProfileCard />
           </Grid>
+          </>
         )}
         {user.role === "Founder" && (
           <Grid item xs={12} md={6}>

@@ -78,3 +78,17 @@ export const updateFounderProfile = async (req, res) => {
       .json({ message: "Internal server error", error: error.message });
   }
 };
+
+
+export const getAllFounder = async (req, res) => {
+  try {
+    const founderProfiles = await FounderProfile.find()
+      .populate(
+      "user",
+      "username email"
+      );
+    res.status(200).json(founderProfiles);
+  } catch (error) {
+    res.status(500).json({ message: "Server Error", error });
+  }
+}; 

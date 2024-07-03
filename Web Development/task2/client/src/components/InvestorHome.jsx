@@ -1,26 +1,52 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
+import FounderProfilesList from "./FounderProfilesList";
+import InvestorProfilesList from "./InvestorProfilesList";
 
-const CustomerHome = () => {
+const InvestorHome = () => {
   return (
-    <Container maxWidth="lg">
-      <Box
+    <>
+      <Typography variant="h4" color={"skyblue"} margin={"14px"}>
+        Welcome Investor
+      </Typography>
+      <Typography variant="body" color={"skyblue"}>
+        Here you can view profiles of other founders and investors for
+        networking
+      </Typography>
+      <Container
+        maxWidth="lg"
         display="flex"
-        flexDirection="column"
-        alignItems="center"
-        justifyContent="center"
-        height="100vh"
+        flexDirection="row"
+        // alignItems="center"
+        // justifyContent="center"
       >
-        <Typography variant="h3" component="h1" gutterBottom>
-          Welcome Customer!
-        </Typography>
-        <Typography variant="h6" color="textSecondary">
-          Here you can browse and compare products.
-        </Typography>
-        {/* Add customer-specific features and components here */}
-      </Box>
-    </Container>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          // height="100vh"
+        >
+          <Typography variant="h4" style={{ marginTop: "10px" }}>
+            Investors like you
+          </Typography>
+          <InvestorProfilesList />
+        </Box>
+        <Box
+          display="flex"
+          flexDirection="column"
+          alignItems="center"
+          justifyContent="center"
+          // height="100vh"
+        >
+          <Typography variant="h4" style={{ marginTop: "10px" }}>
+            Founders you might be interested in
+          </Typography>
+          <FounderProfilesList />
+        </Box>
+      </Container>
+    </>
   );
 };
 
-export default CustomerHome;
+export default InvestorHome;

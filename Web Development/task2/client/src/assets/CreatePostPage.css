@@ -1,0 +1,19 @@
+.create-post-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.create-post-card {
+  width: 100%;
+  max-width: 600px;
+}
+
+.create-post-input {
+  margin-top: 10px;
+}
+
+.create-post-button {
+  margin-top: 20px;
+}

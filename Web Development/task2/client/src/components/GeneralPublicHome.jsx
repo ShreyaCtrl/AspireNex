@@ -1,7 +1,9 @@
 import React from "react";
 import { Box, Container, Typography } from "@mui/material";
+import FounderProfilesList from "./FounderProfilesList";
+import InvestorProfilesList from "./InvestorProfilesList";
 
-const FounderHome = () => {
+const GeneralPublicHome = () => {
   return (
     <Container maxWidth="lg">
       <Box
@@ -9,18 +11,28 @@ const FounderHome = () => {
         flexDirection="column"
         alignItems="center"
         justifyContent="center"
-        height="100vh"
+        // height="100vh"
       >
-        <Typography variant="h3" component="h1" gutterBottom>
-          Welcome Employee!
+        <Typography variant="h4" style={{ marginTop: "10px" }}>
+          Founders
         </Typography>
-        <Typography variant="h6" color="textSecondary">
-          Here you can manage products and user accounts.
-        </Typography>
-        {/* Add employee-specific features and components here */}
+        <FounderProfilesList />
       </Box>
+      <Box
+        display="flex"
+        flexDirection="column"
+        alignItems="center"
+        justifyContent="center"
+        // height="100vh"
+      >
+        <Typography variant="h4" style={{ marginTop: "10px" }}>
+          Investors
+        </Typography>
+        <InvestorProfilesList />
+      </Box>
+      
     </Container>
   );
 };
 
-export default FounderHome;
+export default GeneralPublicHome;

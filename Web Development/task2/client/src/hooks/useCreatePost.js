@@ -1,26 +1,27 @@
 import { useState } from "react";
 import { CustomSuccessAlert, CustomErrorAlert } from "../utils/general.js";
 
-const useAddFounderProfile = () => {
+const useCreatePost = () => {
   const [isLoading, setIsLoading] = useState(false);
+  console.log(localStorage.getItem("token"));
 
-  const addFounderProfile = async (profile) => {
+  const createPost = async (post) => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/founderProfile/create", {
+      const response = await fetch("http://localhost:5000/post/create", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // assuming token is stored in localStorage
+          Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
-        body: JSON.stringify(profile),
+        body: JSON.stringify(post),
       });
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
 
-      CustomSuccessAlert("Founder profile added successfully");
+      CustomSuccessAlert("Post created successfully");
     } catch (error) {
       CustomErrorAlert(error.message);
     } finally {
@@ -28,7 +29,7 @@ const useAddFounderProfile = () => {
     }
   };
 
-  return { addFounderProfile, isAddingFounderProfile: isLoading };
+  return { createPost, isCreatingPost: isLoading };
 };
 
-export default useAddFounderProfile;
+export default useCreatePost;

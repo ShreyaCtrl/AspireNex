@@ -58,3 +58,14 @@ export const updateInvestorProfile = async (req, res) => {
       .json({ message: "Internal server error", error: error.message });
   }
 };
+
+
+export const getAllInvestor = async (req, res) => {
+  try {
+    const investorProfiles = await InvestorProfile.find().populate("user");
+    res.json(investorProfiles);
+  } catch (error) {
+    console.error("Error fetching investor profiles:", error);
+    res.status(500).send("Server error");
+  }
+};

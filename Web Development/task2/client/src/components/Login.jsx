@@ -125,7 +125,7 @@ const Login = () => {
       console.log("Fetched user: ", fetchedUser);
       if (fetchedUser) {
         // setUser(fetchedUser); // Set the user context with fetched user data
-        navigate("/profile");
+        navigate("/home");
       } else {
         setError("Invalid username or password.");
       }
