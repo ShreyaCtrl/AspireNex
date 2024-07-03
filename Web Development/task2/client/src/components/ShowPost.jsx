@@ -230,20 +230,14 @@ const ShowPost = ({ post }) => {
   const [comments, setComments] = useState(post.comments || []);
   const [upvotes, setUpvotes] = useState(post.upvotes || 0);
   const [hasLiked, setHasLiked] = useState(false); // State to track if the user has liked the post
-  const { addComment, isAddingComment } = useAddComment();
+  const { addComment } = useAddComment();
   const { upvotePost, isUpvotingPost } = useUpvotePost();
 
   const handleCommentChange = (e) => {
     setComment(e.target.value);
   };
 
-  useEffect(() => {
-    if (post) {
-      setComments(post.comments || []);
-      setUpvotes(post.upvotes || 0);
-      checkIfUserHasLiked(post.likedBy);
-    }
-  }, [post]);
+  
 
   const getUserIdFromToken = () => {
     const token = localStorage.getItem("token");
@@ -253,13 +247,30 @@ const ShowPost = ({ post }) => {
     return decoded.userId; // Assuming the token contains the userId as a field
   };
 
-  const checkIfUserHasLiked = (likedBy) => {
-    const userId = getUserIdFromToken();
-    if (!userId) return;
+  // const checkIfUserHasLiked = (likedBy) => {
+  //   const userId = getUserIdFromToken();
+  //   if (!userId) return;
 
-    const liked = likedBy.includes(userId);
-    setHasLiked(liked);
+  //   const liked = likedBy.includes(userId);
+  //   setHasLiked(liked);
+  // };
+  const userId = getUserIdFromToken();
+
+  const checkIfUserHasLiked = (post, userId) => {
+    return post.likedBy.some((user) => user.toString() === userId);
   };
+
+  useEffect(() => {
+    // if (post) {
+    //   setComments(post.comments || []);
+    //   setUpvotes(post.upvotes || 0);
+    //   checkIfUserHasLiked(post.likedBy);
+    // }
+    if (post && userId) {
+      const userHasLiked = checkIfUserHasLiked(post, userId);
+      setHasLiked(userHasLiked);
+    }
+  }, [post, userId]);
 
   const handleCommentSubmit = async () => {
     if (!comment) return;

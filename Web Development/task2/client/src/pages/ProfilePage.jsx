@@ -3,7 +3,6 @@ import { Container, Grid } from "@mui/material";
 import InvestorProfileCard from "../components/InvestorProfileCard";
 import FounderProfileCard from "../components/FounderProfileCard";
 import { UserContext } from "../UserContext";
-import PostsPage from "./PostsPage";
 
 const ProfilePage = () => {
   const { user } = useContext(UserContext);

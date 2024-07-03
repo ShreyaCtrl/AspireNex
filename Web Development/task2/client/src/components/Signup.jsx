@@ -5,7 +5,6 @@ import {
   Container,
   TextField,
   Typography,
-  Alert,
   MenuItem,
 } from "@mui/material";
 import { Link, useNavigate } from "react-router-dom";
@@ -20,6 +19,7 @@ const Signup = () => {
   const navigate = useNavigate();
 
   const roles = ["Investor", "Founder", "General Public"];
+  console.log(error);
 
   const handleSubmit = (e) => {
     e.preventDefault();

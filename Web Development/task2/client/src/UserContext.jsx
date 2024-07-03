@@ -1,6 +1,5 @@
 // UserContext.js
-import React, { createContext, useState, useEffect } from "react";
-import useGetUser from "./hooks/useGetUser";
+import React, { createContext, useState} from "react";
 
 export const UserContext = createContext(null);
 
