@@ -8,12 +8,15 @@ const useGetPosts = (postId) => {
   const getPost = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/post/${postId}`, {
-        method: "GET",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await fetch(
+        `https://innovatesphere-server.onrender.com/post/${postId}`,
+        {
+          method: "GET",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

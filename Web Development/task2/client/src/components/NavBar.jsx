@@ -279,7 +279,7 @@ const NavBar = () => {
             >
               {user ? (
                 <>
-                  {user.role === "investor" || user.role === "founder" ? (
+                  {user.role === "Investor" || user.role === "Founder" ? (
                     <>
                       <MenuItem
                         onClick={handleClose}
@@ -345,7 +345,7 @@ const NavBar = () => {
           <>
             {user ? (
               <>
-                {user.role === "investor" || user.role === "founder" ? (
+                {user.role === "Investor" || user.role === "Founder" ? (
                   <>
                     <Button color="inherit" component={Link} to="/profile">
                       Profile

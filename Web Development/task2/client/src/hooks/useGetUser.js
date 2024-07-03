@@ -8,7 +8,7 @@ const useGetUser = (setUser) => {
     setIsLoading(true);
     try {
       const response = await fetch(
-        "http://localhost:5000/users/login",
+        "https://innovatesphere-server.onrender.com/users/login",
         {
           method: "POST",
           headers: {

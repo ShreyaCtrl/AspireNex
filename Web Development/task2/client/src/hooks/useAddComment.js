@@ -8,7 +8,7 @@ const useAddComment = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `http://localhost:5000/post/${postId}/comments`,
+        `https://innovatesphere-server.onrender.com/post/${postId}/comments`,
         {
           method: "POST",
           headers: {

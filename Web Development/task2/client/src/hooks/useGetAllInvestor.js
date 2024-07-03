@@ -10,7 +10,7 @@ const useGetInvestorProfiles = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "http://localhost:5000/investorProfile/",
+        "https://innovatesphere-server.onrender.com/investorProfile/",
         {
           method: "GET",
           headers: {

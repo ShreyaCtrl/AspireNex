@@ -7,12 +7,15 @@ const useDeletePost = () => {
   const deletePost = async (postId) => {
     try {
       setIsLoading(true);
-      const response = await fetch(`http://localhost:5000/posts/${postId}`, {
-        method: "DELETE",
-        headers: {
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await fetch(
+        `https://innovatesphere-server.onrender.com/post/${postId}`,
+        {
+          method: "DELETE",
+          headers: {
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

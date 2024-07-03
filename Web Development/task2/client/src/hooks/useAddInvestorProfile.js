@@ -8,7 +8,7 @@ const useAddInvestorProfile = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "http://localhost:5000/investorProfile/create",
+        "https://innovatesphere-server.onrender.com/investorProfile/create",
         {
           method: "POST",
           headers: {

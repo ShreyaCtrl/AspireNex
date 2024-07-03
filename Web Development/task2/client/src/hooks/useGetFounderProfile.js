@@ -8,13 +8,16 @@ const useGetFounderProfile = () => {
   const getFounderProfile = async () => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/founderProfile/get", {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-      });
+      const response = await fetch(
+        "https://innovatesphere-server.onrender.com/founderProfile/get",
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

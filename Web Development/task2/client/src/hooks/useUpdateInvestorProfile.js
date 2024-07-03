@@ -8,7 +8,7 @@ const useUpdateInvestorProfile = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        "http://localhost:5000/investorProfile/update",
+        "https://innovatesphere-server.onrender.com/investorProfile/update",
         {
           method: "PUT",
           headers: {

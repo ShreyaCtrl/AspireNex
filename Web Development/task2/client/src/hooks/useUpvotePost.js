@@ -45,7 +45,7 @@ const useUpvotePost = () => {
     try {
       setIsLoading(true);
       const response = await fetch(
-        `http://localhost:5000/post/${postId}/upvote`,
+        `https://innovatesphere-server.onrender.com/post/${postId}/upvote`,
         {
           method: "POST",
           headers: {

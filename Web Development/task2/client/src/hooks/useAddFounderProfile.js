@@ -7,14 +7,17 @@ const useAddFounderProfile = () => {
   const addFounderProfile = async (profile) => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/founderProfile/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`, // assuming token is stored in localStorage
-        },
-        body: JSON.stringify(profile),
-      });
+      const response = await fetch(
+        "https://innovatesphere-server.onrender.com/founderProfile/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`, // assuming token is stored in localStorage
+          },
+          body: JSON.stringify(profile),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);

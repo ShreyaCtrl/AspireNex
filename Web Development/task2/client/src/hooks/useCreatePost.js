@@ -8,14 +8,17 @@ const useCreatePost = () => {
   const createPost = async (post) => {
     try {
       setIsLoading(true);
-      const response = await fetch("http://localhost:5000/post/create", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${localStorage.getItem("token")}`,
-        },
-        body: JSON.stringify(post),
-      });
+      const response = await fetch(
+        "https://innovatesphere-server.onrender.com/post/create",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localStorage.getItem("token")}`,
+          },
+          body: JSON.stringify(post),
+        }
+      );
 
       if (!response.ok) {
         throw new Error(`HTTP error! status: ${response.status}`);
