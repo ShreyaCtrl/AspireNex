@@ -1,5 +1,4 @@
 import express from "express";
-import Post from "../../../DB/models/Post.model.js";
 // const Post = require("../models/Post");
 import { addComment, createPost, deletePost, getAllPost, getOnePost, updatePost, upvotePost } from "./post.controller.js";
 import { authenticate } from "../../middleware/authenticateUser.js"; // middleware for authentication

@@ -1,4 +1,4 @@
-import InvestorProfile from "../../../DB/models/investorProfile.model.js";
+import InvestorProfile from "../../DB/models/investorProfile.model.js";
 
 export const createInvestorProfile = async (req, res) => {
   const { investmentPreferences, portfolio, successStories } = req.body;

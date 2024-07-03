@@ -1,4 +1,4 @@
-import connectDb from "../../DB/connection.js";
+import connectDb from "../DB/connection.js";
 import userRouter from "./users/user.router.js";
 import investorProfileRouter from "./investorProfile/investorProfile.router.js";
 import founderProfileRouter from "./founderProfile/founderProfile.router.js";

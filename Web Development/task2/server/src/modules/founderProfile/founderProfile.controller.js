@@ -1,4 +1,4 @@
-import FounderProfile from "../../../DB/models/founderProfile.model.js";
+import FounderProfile from "../../DB/models/founderProfile.model.js";
 
 export const createFounderProfile = async (req, res) => {
   const {

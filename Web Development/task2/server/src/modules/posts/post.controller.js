@@ -1,4 +1,4 @@
-import Post from "../../../DB/models/Post.model.js";
+import Post from "../../DB/models/Post.model.js";
 import { authenticate } from "../../middleware/authenticateUser.js";
 
 export const getAllPost = async (req, res) => {

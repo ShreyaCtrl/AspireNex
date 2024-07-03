@@ -1,4 +1,4 @@
-import UserModel from "../../../DB/models/User.model.js";
+import UserModel from "../../DB/models/User.model.js";
 import jwt from "jsonwebtoken";
 // const bcrypt = require("bcryptjs");// Adjust the path to your User model
 import bcrypt from "bcryptjs";
